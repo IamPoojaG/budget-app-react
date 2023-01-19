@@ -3,10 +3,10 @@ import React from 'react';
 const ViewBudget = (props) => {
   return (
     <>
-      <span>Budget: £{props.budget}</span>
+      <span>Budget: {props.budget}Rs</span>
       <button
         type='button'
-        class='btn btn-primary'
+        class='btn btn-success'
         onClick={props.handleEditClick}
       >
         Edit
