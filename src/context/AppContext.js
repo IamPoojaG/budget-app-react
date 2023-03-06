@@ -8,6 +8,19 @@ export const AppReducer = (state, action) => {
         ...state,
         expenses: [...state.expenses, action.payload],
       };
+    case 'EDIT_EXPENSE':
+      return {
+        ...state,
+        expenses: [
+          ...state.expenses.map((expense) => {
+            if (expense.id === action.payload) {
+              return action.payload;
+            } else {
+              return expense;
+            }
+          }),
+        ],
+      };
     case 'DELETE_EXPENSE':
       return {
         ...state,
